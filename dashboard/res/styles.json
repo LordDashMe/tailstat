@@ -1,0 +1,11 @@
+{
+  "plugins": {},
+  "third_party": {},
+  "commons": {},
+  "components": {},
+  "pages": {
+    "tailstat": [
+      "src/scss/pages/tailstat.scss"
+    ]
+  }
+}

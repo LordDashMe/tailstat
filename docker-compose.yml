@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  site:
+    container_name: 'tailstat'
+    tty: true
+    stdin_open: true
+    image: 'python:3.11.2-alpine3.17'
+    volumes:
+      - '.:/var/tailstat/'
+    networks:
+      - default
+networks:
+  default: 
+    name: 'tailstat_network'

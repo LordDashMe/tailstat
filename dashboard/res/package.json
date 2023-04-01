@@ -1,0 +1,45 @@
+{
+  "name": "dasboard",
+  "version": "0.0.1",
+  "description": "A simple dashboard for basic system monitoring.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:clean": "gulp clean",
+    "build:scripts": "gulp build_scripts",
+    "build:styles": "gulp build_styles",
+    "build:assets": "gulp assets",
+    "build:watch": "gulp watch"
+  },
+  "author": "Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com> (https://lorddashme.github.io/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-gzip": "^1.4.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2"
+  },
+  "browserslist": [
+    "> 0.25%, not dead",
+    "last 2 versions",
+    "firefox >= 4",
+    "safari 7",
+    "safari 8",
+    "IE 8",
+    "IE 9",
+    "IE 10",
+    "IE 11"
+  ],
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=10.0.0"
+  }
+}
