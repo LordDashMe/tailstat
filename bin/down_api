@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "Shutting down tailstat API..."
+pkill -9 gunicorn
+sleep 1
+echo "Successfully shutdown tailstat API."

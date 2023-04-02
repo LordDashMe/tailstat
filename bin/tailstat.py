@@ -19,7 +19,6 @@ import tailstat_mem
 
 
 def main():
-
     output = json.dumps({
         "tailstat": {
             "cpu": tailstat_cpu.main(),
@@ -29,7 +28,7 @@ def main():
         "timestamp": str(datetime.now())
     })
 
-    with open(f"{TEMP_PATH}tailstat_data.json", 'w') as f:
+    with open(f"{TEMP_PATH}tailstat_data.json", "w") as f:
         f.write(output)
 
 

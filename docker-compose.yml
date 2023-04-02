@@ -1,12 +1,25 @@
 version: '3.9'
 services:
-  site:
+  server:
     container_name: 'tailstat'
     tty: true
     stdin_open: true
-    image: 'python:3.11.2-alpine3.17'
+    image: 'tailstat:ubuntu22.04'
+    build: '.'
     volumes:
       - '.:/var/tailstat/'
+    ports:
+      - 10000:10000
+      - 10001:10001
+    networks:
+      - default
+  dashboard_res:
+    container_name: 'tailstat_dashboard_res'
+    tty: true
+    stdin_open: true
+    image: 'node:18-alpine'
+    volumes:
+      - '.:/var/tailstat/dashboard/res/'
     networks:
       - default
 networks:

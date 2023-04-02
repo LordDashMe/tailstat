@@ -115,7 +115,7 @@ function filteredMappingUsingFilePath(filePath, mapping) {
  * @param {Object} files The file source in key value pair or array format.
  * @param {String} taskNameSuffix Use to set task as unique to the other.
  * 
- * @returns {void}
+ * @returns {VoidFunction}
  */
 function scriptTaskPipeLineRegistry(module, file, files, taskNameSuffix) {
   
@@ -170,7 +170,7 @@ function scriptTaskPipeLineRegistry(module, file, files, taskNameSuffix) {
  * @param {Object} files The file source in key value pair or array format.
  * @param {String} taskNameSuffix Use to set task as unique to the other.
  * 
- * @returns {void}
+ * @returns {VoidFunction}
  */
 function styleTaskPipeLineRegistry(module, file, files, taskNameSuffix) {
 
@@ -326,15 +326,17 @@ exports.clean = clean;
 exports.assets = gulp.series('build_scripts', 'build_styles');
 
 /**
- * Command for the watch.
+ * Command for the watch file changes.
  */
 exports.watch = function () {
   
-  gulp.watch(paths.scripts.src).on('change', function (filePath) {
-    buildScript(filePath.replace(/(\\)/gm, '/'));
-  });
+  gulp.watch(paths.scripts.src)
+    .on('change', function (filePath) {
+      buildScript(filePath.replace(/(\\)/gm, '/'));
+    });
 
-  gulp.watch(paths.styles.src).on('change', function (filePath) {
-    buildStyle(filePath.replace(/(\\)/gm, '/'));
-  });
+  gulp.watch(paths.styles.src)
+    .on('change', function (filePath) {
+      buildStyle(filePath.replace(/(\\)/gm, '/'));
+    });
 };

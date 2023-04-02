@@ -11,7 +11,6 @@ import tailstat_utils
 
 
 def main():
-
     diskUsage = psutil.disk_usage("/")
 
     percent = diskUsage.percent

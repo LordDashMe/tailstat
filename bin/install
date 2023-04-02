@@ -1,0 +1,29 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")";
+
+pip install -r "$SCRIPT_DIR/../requirements.txt"
+
+cp "$SCRIPT_DIR/../etc/tailstat.conf" /etc/
+cp "$SCRIPT_DIR/../etc/nginx/sites-available/tailstat_api" /etc/nginx/sites-available/
+cp "$SCRIPT_DIR/../etc/nginx/sites-available/tailstat_dashboard" /etc/nginx/sites-available/
+
+if [ ! -f /etc/nginx/sites-enabled/tailstat_api ]; then
+    ln -s /etc/nginx/sites-available/tailstat_api /etc/nginx/sites-enabled/
+else
+    rm /etc/nginx/sites-enabled/tailstat_api
+fi
+if [ ! -f /etc/nginx/sites-enabled/tailstat_dashboard ]; then
+    ln -s /etc/nginx/sites-available/tailstat_dashboard /etc/nginx/sites-enabled/
+else
+    rm /etc/nginx/sites-enabled/tailstat_dashboard
+fi
+
+$SCRIPT_DIR/disable_watchdog
+$SCRIPT_DIR/enable_watchdog
+
+service nginx restart
+
+echo -e "\n=================================\n"
+echo "Tailstat successfully installed."
+echo -e "\n=================================\n"

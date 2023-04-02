@@ -1,0 +1,11 @@
+server {
+    listen 10001 default_server;
+    listen [::]:10001 default_server;
+
+    index index.html;
+    root /var/tailstat/dashboard/;
+
+    location / {
+        try_files $uri $uri/index.html;
+    }
+}

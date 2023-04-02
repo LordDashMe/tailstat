@@ -11,7 +11,6 @@ import tailstat_utils
 
 
 def main():
-
     mem = psutil.virtual_memory()
 
     percent = mem.percent

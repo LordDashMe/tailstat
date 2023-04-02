@@ -1,24 +1,27 @@
+import sys
 import configparser
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 
 config = configparser.ConfigParser()
 config.read("/etc/tailstat.conf")
 
 ROOT_PATH = config["DEFAULT"].get("ROOT_PATH")
-TEMP_PATH = f"{ROOT_PATH}tmp/"
+
+sys.path.append(f"{ROOT_PATH}bin/")
+
+import tailstat
 
 app = FastAPI()
 
 
-@app.post("/generate/report")
-def create_generate_report_flag():
-
+@app.post("/report/sync")
+def report_sync():
     try:
-
-        flagFilePath = f"{TEMP_PATH}/generate"
-        with open(flagFilePath, 'w') as f:
-            f.write()
+        tailstat.main()
         return { "message": "ok" }
 
     except Exception as e:
-        print(e)
+        return JSONResponse(
+            status_code=500,
+            content={ "message": "Something is wrong, please try again later." })
