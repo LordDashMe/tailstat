@@ -1,8 +1,19 @@
 {
-  "plugins": {},
+  "plugins": {
+    "fontawesome": "src/scss/plugins/fontawesome-free-5.14.4.scss"
+  },
   "third_party": {},
-  "commons": {},
-  "components": {},
+  "commons": {
+    "global": "src/scss/global.scss",
+    "buttons": "src/scss/buttons.scss"
+  },
+  "components": {
+    "host": "src/scss/components/host.scss",
+    "metric": "src/scss/components/metric.scss",
+    "cpu": "src/scss/components/cpu.scss",
+    "mem": "src/scss/components/mem.scss",
+    "disk": "src/scss/components/disk.scss"
+  },
   "pages": {
     "tailstat": [
       "src/scss/pages/tailstat.scss"

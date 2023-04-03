@@ -1,8 +1,18 @@
 {
-  "plugins": {},
+  "plugins": {
+    "chartjs": "src/js/plugins/chartjs-4.2.1.min.js",
+    "momentjs": "src/js/plugins/momentjs-2.29.4.min.js"
+  },
   "third_party": {},
-  "commons": {},
-  "components": {},
+  "commons": {
+    "global": "src/js/global.js"
+  },
+  "components": {
+    "usage_meter": "src/js/components/usage_meter.js",
+    "cpu": "src/js/components/cpu.js",
+    "mem": "src/js/components/mem.js",
+    "disk": "src/js/components/disk.js"
+  },
   "pages": {
     "tailstat": [
       "src/js/pages/tailstat.js"

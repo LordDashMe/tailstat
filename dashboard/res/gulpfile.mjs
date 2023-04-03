@@ -13,32 +13,34 @@
  * 
  * @author Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com> (https://lorddashme.github.io/)
  */
-var fs = require('fs');
-var del =  require('del');
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var gzip = require('gulp-gzip');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
-var cleanCSS = require('gulp-clean-css');
-var autoPrefixer = require('gulp-autoprefixer');
+import * as fs from 'fs';
+import { deleteAsync } from 'del';
+import gulp from 'gulp';
+import sassCompiler from 'sass';
+import gulpSass from 'gulp-sass';
+const sass = gulpSass(sassCompiler);
+import gzip from 'gulp-gzip';
+import babel from 'gulp-babel';
+import concat from 'gulp-concat';
+import rename from 'gulp-rename';
+import uglify from 'gulp-uglify';
+import cleanCSS from 'gulp-clean-css';
+import autoPrefixer from 'gulp-autoprefixer';
 
 /**
  * Read scripts configuration file.
  */
-var scriptsConfig = JSON.parse(fs.readFileSync('scripts.json', 'utf8'));
+const scriptsConfig = JSON.parse(fs.readFileSync('scripts.json', 'utf8'));
 
 /**
  * Read styles configuration file.
  */
-var stylesConfig = JSON.parse(fs.readFileSync('styles.json', 'utf8'));
+const stylesConfig = JSON.parse(fs.readFileSync('styles.json', 'utf8'));
 
 /**
  * Prepare hardcoded path setup for tasks.
  */
-var paths = {
+const paths = {
   scripts: {
     src: 'src/js/**/*.*',
     dest: {
@@ -73,9 +75,9 @@ var paths = {
  */
 function filteredMappingUsingFilePath(filePath, mapping) {
 
-  var affectedFiles = {};
+  const affectedFiles = {};
 
-  var setAffectedFile = function (module, file, srcPath) {
+  const setAffectedFile = function (module, file, srcPath) {
     
     if (typeof affectedFiles[module] === 'undefined') {
       affectedFiles[module] = {};
@@ -85,11 +87,11 @@ function filteredMappingUsingFilePath(filePath, mapping) {
 
   };
 
-  for (var module in mapping) {
+  for (let module in mapping) {
 
-    var files = mapping[module];
+    let files = mapping[module];
 
-    for (var file in files) {
+    for (let file in files) {
 
       if (typeof files[file] === 'object') {
 
@@ -201,16 +203,16 @@ function styleTaskPipeLineRegistry(module, file, files, taskNameSuffix) {
  */
 function buildScript(filePath) {
 
-  var filteredScriptConfig = filteredMappingUsingFilePath(filePath, scriptsConfig);
+  const filteredScriptConfig = filteredMappingUsingFilePath(filePath, scriptsConfig);
 
-  for (var scriptConfig in filteredScriptConfig) {
+  for (let scriptConfig in filteredScriptConfig) {
 
-    var files = filteredScriptConfig[scriptConfig];
-    var module = scriptConfig;
+    let files = filteredScriptConfig[scriptConfig];
+    let module = scriptConfig;
 
     (function (files, module) {
 
-      for (var file in files) {
+      for (let file in files) {
 
         scriptTaskPipeLineRegistry(module, file, files, '_optimized');
 
@@ -227,16 +229,16 @@ function buildScript(filePath) {
  */
 function buildScripts() {
 
-  var consolidatedTasks = [];
+  const consolidatedTasks = [];
 
-  for (var scriptConfig in scriptsConfig) {
+  for (let scriptConfig in scriptsConfig) {
 
-    var files = scriptsConfig[scriptConfig];
-    var module = scriptConfig;
+    let files = scriptsConfig[scriptConfig];
+    let module = scriptConfig;
 
     (function (files, module) {
 
-      for (var file in files) {
+      for (let file in files) {
 
         scriptTaskPipeLineRegistry(module, file, files, '');
     
@@ -258,16 +260,16 @@ function buildScripts() {
  */
  function buildStyle(filePath) {
 
-  var filteredStyleConfig = filteredMappingUsingFilePath(filePath, stylesConfig);
+  const filteredStyleConfig = filteredMappingUsingFilePath(filePath, stylesConfig);
 
-  for (var styleConfig in filteredStyleConfig) {
+  for (let styleConfig in filteredStyleConfig) {
 
-    var files = filteredStyleConfig[styleConfig];
-    var module = styleConfig;
+    let files = filteredStyleConfig[styleConfig];
+    let module = styleConfig;
 
     (function (files, module) {
 
-      for (var file in files) {
+      for (let file in files) {
 
         styleTaskPipeLineRegistry(module, file, files, '_optimized');
     
@@ -284,16 +286,16 @@ function buildScripts() {
  */
 function buildStyles() {
 
-  var consolidatedTasks = [];
+  const consolidatedTasks = [];
 
-  for (var styleConfig in stylesConfig) {
+  for (let styleConfig in stylesConfig) {
 
-    var files = stylesConfig[styleConfig];
-    var module = styleConfig;
+    let files = stylesConfig[styleConfig];
+    let module = styleConfig;
 
     (function (files, module) {
 
-      for (var file in files) {
+      for (let file in files) {
 
         styleTaskPipeLineRegistry(module, file, files, '');
     
@@ -310,26 +312,23 @@ function buildStyles() {
 }
 
 /**
- * Command for the clean dist module.
- */
-function clean() {
-  return del(['dist/'], { force: true });
-}
-
-/**
  * Register gulp task commands.
  */
 buildScripts();
 buildStyles();
 
-exports.clean = clean;
-exports.assets = gulp.series('build_scripts', 'build_styles');
+/**
+ * Command for the clean dist directory.
+ */
+gulp.task('clean', async function () {
+  await deleteAsync(['dist/'], { force: true });
+});
 
 /**
  * Command for the watch file changes.
  */
-exports.watch = function () {
-  
+gulp.task('watch', function () {
+
   gulp.watch(paths.scripts.src)
     .on('change', function (filePath) {
       buildScript(filePath.replace(/(\\)/gm, '/'));
@@ -339,4 +338,6 @@ exports.watch = function () {
     .on('change', function (filePath) {
       buildStyle(filePath.replace(/(\\)/gm, '/'));
     });
-};
+});
+
+gulp.series('build_scripts', 'build_styles', 'clean', 'watch');

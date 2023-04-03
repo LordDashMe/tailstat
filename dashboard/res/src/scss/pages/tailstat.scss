@@ -1,0 +1,26 @@
+.dashboard {
+
+  h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 3.4em;
+    margin-bottom: 12px;
+
+    span {
+      color: #9A9A9A;
+      font-size: 24px;
+    }
+
+    .fa-github {
+      font-size: 26px;
+      font-weight: 400;
+  
+      &:before {
+        content: "\f09b";
+      }
+    }
+  }
+
+  h2 {
+    font-family: 'Chakra Petch', sans-serif;
+  }
+}

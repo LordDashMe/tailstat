@@ -19,7 +19,7 @@ services:
     stdin_open: true
     image: 'node:18-alpine'
     volumes:
-      - '.:/var/tailstat/dashboard/res/'
+      - './dashboard/:/var/tailstat/dashboard/'
     networks:
       - default
 networks:

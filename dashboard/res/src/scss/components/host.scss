@@ -1,0 +1,28 @@
+.host {
+  position: relative;
+  padding: 16px 40px;
+  background-color: #F7F7F7;
+  border-radius: 20px;
+
+  h2 {
+    font-size: 2.6em;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .host-timestamp {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+  }
+
+  .host-actions {
+    position: absolute;
+    right: 42px;
+    top: 22px;
+  }
+
+  .host-metrics {
+    display: flex;
+    justify-content: space-between;
+  }
+}

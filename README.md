@@ -1,4 +1,4 @@
-# tailstat
+# TailStat
 
 A simple dashboard for basic system monitoring.
 
@@ -70,7 +70,11 @@ $ /var/tailstat/bin/up_api
 $ docker-compose up -d
 ```
 
-- Once all set with the docker compose, navigate to the container and execute the tailstat default installer script inside container.
+#### Prepare API
+
+- Navigate to the docker container name `tailstat`.
+
+- Execute the tailstat installer script.
 
 ```sh
 $ /var/tailstat/bin/install
@@ -80,6 +84,19 @@ $ /var/tailstat/bin/install
 
 ```sh
 $ /var/tailstat/bin/install_dev
+```
+
+#### Work with Dashboard
+
+- Navigate to the docker container name `tailstat_dashboard_res`.
+
+- Install the essential packges for node alphine `apk add g++ make py3-pip` before running the npm install.
+
+- Go to the dasboard folder resource and execute npm install.
+
+```sh
+cd /var/tailstat/dasboard/res
+npm install
 ```
 
 ### Usual Environment

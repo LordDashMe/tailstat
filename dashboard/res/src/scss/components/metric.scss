@@ -1,0 +1,31 @@
+.metric {
+  display: flex;
+
+  h3 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.8em;
+    margin: 0;
+  }
+
+  .metric-wrapper {
+
+    .metric-graph {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  
+    .metric-stat {
+      display: inline-block;
+      vertical-align: middle;
+  
+      .metric-content {
+        font-family: 'Chakra Petch', sans-serif;
+        font-size: 1.2em;
+        
+        p {
+          margin: 2px 0;
+        }
+      }
+    }
+  }
+}

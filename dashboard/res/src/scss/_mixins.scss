@@ -1,0 +1,105 @@
+@mixin screen-mobile-xtra-small () {
+  
+    @media (max-width: 280px) {
+        @content;
+    } 
+}
+
+@mixin screen-mobile-small () {
+  
+    @media (min-width: 281px) and (max-width: 320px) {
+        @content;
+    } 
+}
+
+@mixin screen-mobile-medium () {
+
+    @media (min-width: 321px) and (max-width: 360px) {
+        @content;
+    } 
+}
+
+@mixin screen-mobile-common () {
+  
+  @media (max-width: 375px) {
+    @content;
+  }  
+}
+
+@mixin screen-mobile-large () {
+
+    @media (min-width: 376px) and (max-width: 767px) {
+        @content;
+    } 
+}
+
+@mixin screen-mobile-xtra-large () {
+
+    @media (min-width: 568px) and (max-width: 767px) {
+        @content;
+    } 
+}
+
+@mixin screen-mobile () {
+
+    @media (max-width: 767px) {
+        @content;
+    } 
+}
+
+@mixin screen-tablet () {
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        @content;
+    } 
+}
+
+@mixin screen-desktop-small () {
+
+    @media (min-width: 1024px) and (max-width: 1279px) {
+        @content;
+    } 
+}
+
+@mixin screen-desktop-medium () {
+
+    @media (min-width: 1280px) and (max-width: 1440px) {
+        @content;
+    } 
+}
+
+@mixin screen-desktop-large () {
+
+    @media (min-width: 1441px) and (max-width: 1907px) {
+        @content;
+    } 
+}
+
+@mixin screen-tablet-and-mobile () {
+
+    @include screen-tablet () {
+        @content;
+    }
+
+    @include screen-mobile () {
+        @content;
+    }
+}
+
+@mixin screen-mobile-small-and-xtra-small {
+
+    @include screen-mobile-small () {
+        @content;
+    }
+
+    @include screen-mobile-xtra-small() {
+        @content;
+    }
+}
+
+@mixin greater-than-required-view-port-width () {
+  
+    @media (min-width: 1201px) {
+        @content;
+    }
+}

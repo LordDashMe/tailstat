@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TailStat - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="res/dist/css/plugins/fontawesome.min.css" />
+    <link rel="stylesheet" href="res/dist/css/commons/global.min.css" />
+    <link rel="stylesheet" href="res/dist/css/commons/buttons.min.css" />
+    <link rel="stylesheet" href="res/dist/css/components/host.min.css" />
+    <link rel="stylesheet" href="res/dist/css/components/metric.min.css" />
+    <link rel="stylesheet" href="res/dist/css/components/cpu.min.css" />
+    <link rel="stylesheet" href="res/dist/css/components/mem.min.css" />
+    <link rel="stylesheet" href="res/dist/css/components/disk.min.css" />
+    <link rel="stylesheet" href="res/dist/css/pages/tailstat.min.css" />
+  </head>
+  <body>
+    <div class="dashboard content-wrapper">
+      <h1>
+        TailStat - Dashboard <span>v0.0.1</span> 
+        <a href="https://github.com/LordDashMe/tailstat" target="_blank"><i class="fab fa-github"></i></a>
+      </h1>
+      <div class="host">
+        <div class="host-actions">
+          <div id="host_action_reload" class="btn small">Reload</div>
+        </div>
+        <h2>Host: 127.0.0.1</h2>
+        <p class="host-timestamp">Captured: <span id="tailstat_timestamp"></span></p>
+        <div class="host-metrics">
+          <div class="metric">
+            <div class="metric-wrapper">
+              <h3>CPU</h3>
+              <div class="metric-graph">
+                <canvas id="cpu_usage"></canvas>
+              </div>
+              <div class="metric-stat">
+                <div class="metric-content">
+                  <p><b>CPUs:</b> <span id="cpu_count"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="metric">
+            <div class="metric-wrapper">
+              <h3>MEMORY</h3>
+              <div class="metric-graph">
+                <canvas id="mem_usage"></canvas>
+              </div>
+              <div class="metric-stat">
+                <div class="metric-content">
+                  <p><b>TOTAL:</b> <span id="mem_total"></span></p>
+                </div>
+                <div class="metric-content">
+                  <p><b>USED:</b> <span id="mem_used"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="metric">
+            <div class="metric-wrapper">
+              <h3>DISK</h3>
+              <div class="metric-graph">
+                <canvas id="disk_usage"></canvas>
+              </div>
+              <div class="metric-stat">
+                <div class="metric-content">
+                  <p><b>TOTAL:</b> <span id="disk_total"></span></p>
+                </div>
+                <div class="metric-content">
+                  <p><b>USED:</b> <span id="disk_used"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="res/dist/js/plugins/chartjs.min.js" defer></script>
+    <script src="res/dist/js/plugins/momentjs.min.js" defer></script>
+    <script src="res/dist/js/commons/global.min.js" defer></script>
+    <script src="res/dist/js/components/usage_meter.min.js" defer></script>
+    <script src="res/dist/js/components/cpu.min.js" defer></script>
+    <script src="res/dist/js/components/mem.min.js" defer></script>
+    <script src="res/dist/js/components/disk.min.js" defer></script>
+    <script src="res/dist/js/pages/tailstat.min.js" defer></script>
+  </body>
+</html>
