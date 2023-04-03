@@ -2,6 +2,8 @@
 
 A simple dashboard for basic system monitoring.
 
+![Dashboard](https://github.com/LordDashMe/tailstat/blob/main/docs/img/dashboard-0.0.1.png?raw=true)
+
 ## Tech Stack
 
 - [Python](https://www.python.org/) - is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation via the off-side rule.
