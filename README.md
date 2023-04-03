@@ -2,6 +2,10 @@
 
 A simple dashboard for basic system monitoring.
 
+## Demo
+
+You can install it on a server or local machine that matches the supported Linux distributions that you want to monitor.
+
 ![Dashboard](https://github.com/LordDashMe/tailstat/blob/main/docs/img/dashboard-0.0.1.png?raw=true)
 
 ## Tech Stack
@@ -36,9 +40,9 @@ A simple dashboard for basic system monitoring.
 $ apt-get install gcc libc-dev linux-headers-generic nginx cron python3 python3-pip
 ```
 
-## Usage
+## Install & Usage
 
-- Download tailstat archived file:
+- Download the tailstat archived file:
 
 ```sh
 $ cd /var/
@@ -52,17 +56,19 @@ $ unzip tailstat.zip
 $ /var/tailstat/bin/install
 ```
 
-- Once the tailstat installed, we can now start the API by running the command:
+- Once tailstat is installed, we can now start the API service by running the command below:
 
 ```sh
 $ /var/tailstat/bin/up_api
 ```
 
-- To access the the dashboard page visit <http://localhost:10001/>
+- To access the dashboard page, visit <http://localhost:10001/>
 
-- The tailstat API is running under <http://localhost:10000/>
+  - Also, if you want to check the API service it is running on, <http://localhost:10000/>
 
-## Development
+## Contribution
+
+To contribute, please check the following steps on different environments in order to get started.
 
 ### Docker Environment
 
