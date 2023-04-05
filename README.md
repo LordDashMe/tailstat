@@ -110,7 +110,7 @@ To contribute, please check the following steps on different environments in ord
   $ /var/tailstat/scripts/up
   ```
 
-- Access it via `http://127.0.0.0:10000` or `http://localhost:10000` 
+- Access it via <http://127.0.0.0:10000> or <http://localhost:10000>
 
 #### Work with the Dashboard
 
@@ -133,9 +133,11 @@ To contribute, please check the following steps on different environments in ord
 
 - You can check more commands in `package.json`
 
-- Access it via `http://127.0.0.0:10001/` or `http://localhost:10001/` 
+- Access it via <http://127.0.0.0:10001/> or <http://localhost:10001/>
 
 ### With Other Environment
+
+- [Ubuntu Guide](https://github.com/LordDashMe/tailstat/blob/main/docs/contribution_guide/ubuntu.md)
 
 ## License
 

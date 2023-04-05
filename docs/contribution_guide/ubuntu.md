@@ -32,7 +32,7 @@
   $ /var/tailstat/scripts/up
   ```
 
-- Access it via `http://127.0.0.0:10000` or `http://localhost:10000` 
+- Access it via <http://127.0.0.0:10000> or <http://localhost:10000>
 
 ## Work with the Dashboard
 
@@ -55,4 +55,4 @@
 
 - You can check more commands in `package.json`
 
-- Access it via `http://127.0.0.0:10001/` or `http://localhost:10001/` 
+- Access it via <http://127.0.0.0:10001/> or <http://localhost:10001/>
