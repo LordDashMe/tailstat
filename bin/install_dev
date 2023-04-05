@@ -1,9 +1,0 @@
-#!/bin/bash
-
-SCRIPT_DIR="$(dirname "$(realpath "$0")")";
-
-pip install -r "$SCRIPT_DIR/../requirements_dev.txt"
-
-echo -e "\n=================================\n"
-echo "Tailstat dev dependecies successfully installed."
-echo -e "\n=================================\n"

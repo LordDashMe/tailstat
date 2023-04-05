@@ -8,7 +8,7 @@
     "build:clean": "gulp clean",
     "build:scripts": "gulp build_scripts",
     "build:styles": "gulp build_styles",
-    "build:assets": "gulp assets",
+    "build:assets": "gulp build_scripts && gulp build_styles",
     "build:watch": "gulp watch"
   },
   "author": "Joshua Clifford Reyes <reyesjoshuaclifford@gmail.com> (https://lorddashme.github.io/)",

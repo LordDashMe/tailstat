@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")";
+
+echo $SCRIPT_DIR
+
+echo "Starting tailstat API..."
+gunicorn -c "$SCRIPT_DIR/gunicorn_config.py" &
+echo "Successfully started tailstat API."

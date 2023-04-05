@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo "Enabling tailstat watchdog..."
-if crontab -l | grep --quiet "/var/tailstat/bin/tailstat.py"; then
-    echo " - watchdog for tailstat.py already configured"
-else
-    crontab -l | { cat; echo "10 * * * * python3 /var/tailstat/bin/tailstat.py"; } | crontab -
-fi
-echo "Successfully enabled tailstat watchdog."

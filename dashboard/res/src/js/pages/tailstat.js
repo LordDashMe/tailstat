@@ -1,21 +1,11 @@
 const fetchTailStatData = async function () {
-  
-  const sync = await fetch(
-    "http://localhost:10000/report/sync", 
-    { 
-      method: "POST",
-    }
-  );
 
-  const res = await fetch(
-    "http://localhost:10000/tmp/tailstat_data.json", 
-    { 
-      method: "GET",
-      headers: {
-        'Accept': 'application/json'
-      }
+  const res = await fetch("http://localhost:10000/report", { 
+    method: "GET",
+    headers: {
+      'Accept': 'application/json'
     }
-  );
+  });
 
   const data = await res.json();
 

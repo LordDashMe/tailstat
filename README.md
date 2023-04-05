@@ -36,80 +36,90 @@ You can install it on a server or local machine that matches the supported Linux
 
 - For debian, make sure to install or have the following packages:
 
-```sh
-$ apt-get install gcc libc-dev linux-headers-generic nginx cron python3 python3-pip
-```
+  ```sh
+  $ apt-get install gcc libc-dev linux-headers-generic nginx python3 python3-pip
+  ```
 
 ## Install & Usage
 
-- Download the tailstat archived file:
+- There are a few steps needed in order to start using Tailstat.
 
-```sh
-$ cd /var/
-$ wget https://github.com/LordDashMe/tailstat/archive/refs/tags/x.x.x.zip -O tailstat.zip
-$ unzip tailstat.zip
-```
+  - Download the tailstat:
 
-- To install tailstat, run the command:
+  ```sh
+  $ cd /var/
+  $ wget https://github.com/LordDashMe/tailstat/archive/refs/tags/x.x.x.zip -O tailstat.zip
+  $ unzip tailstat.zip
+  ```
 
-```sh
-$ /var/tailstat/bin/install
-```
+  - Install the tailstat:
 
-- Once tailstat is installed, we can now start the API service by running the command below:
+  ```sh
+  $ /var/tailstat/scripts/install
+  ```
 
-```sh
-$ /var/tailstat/bin/up_api
-```
+  - Up the tailstat API service:
 
-- To access the dashboard page, visit <http://localhost:10001/>
+  ```sh
+  $ /var/tailstat/scripts/up
+  ```
 
-  - Also, if you want to check the API service it is running on, <http://localhost:10000/>
+  - Now you can use TailStat!
+
+    - To access the dashboard page, visit <http://localhost:10001/>
+
+    - Also, if you want to check the API service it is running on, <http://localhost:10000/>
 
 ## Contribution
 
 To contribute, please check the following steps on different environments in order to get started.
 
-### Docker Environment
+### With Docker Environment
 
 - If you are familiar with Docker you can start immediately by running the docker compose command in the root directory.
 
-```sh
-$ docker-compose up -d
-```
+  ```sh
+  $ docker-compose up -d
+  ```
 
-#### Prepare API
+#### Work with the API
 
 - Navigate to the docker container name `tailstat`.
 
 - Execute the tailstat installer script.
 
-```sh
-$ /var/tailstat/bin/install
-```
+  ```sh
+  $ /var/tailstat/scripts/install
+  ```
 
 - Execute the tailstat installer dev script.
 
-```sh
-$ /var/tailstat/bin/install_dev
-```
+  ```sh
+  $ /var/tailstat/scripts/install_dev
+  ```
 
-#### Work with Dashboard
+#### Work with the Dashboard
 
-- Navigate to the docker container name `tailstat_dashboard_res`.
+- Navigate inside the docker container name `tailstat_dashboard_res`.
 
 - Install the essential packges for node alphine `apk add g++ make py3-pip` before running the npm install.
 
 - Go to the dasboard folder resource and execute npm install.
 
-```sh
-cd /var/tailstat/dasboard/res
-npm install
-```
+  ```sh
+  $ cd /var/tailstat/dasboard/res
+  $ npm install
+  ```
 
-### Usual Environment
+- To build watch on any file changes:
 
-@TODO
+  ```sh
+  $ npm run build:watch
+  ```
+
+- You can check more commands in `package.json`
+
+### With Other Environment
 
 ## License
 

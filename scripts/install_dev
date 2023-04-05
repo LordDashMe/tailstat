@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")";
+
+# Setup tailstat python dev dependencies
+pip install -r "$SCRIPT_DIR/../requirements_dev.txt"
+
+echo -e "\nTailstat dev dependecies successfully installed!\n"

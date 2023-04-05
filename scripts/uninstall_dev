@@ -1,0 +1,8 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")";
+
+# Remove tailstat python dev dependencies
+pip uninstall -y -r "$SCRIPT_DIR/../requirements_dev.txt"
+
+echo -e "\nTailstat dev dependencies uninstalled.\n"

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-echo "Disabling tailstat watchdog..."
-crontab -l | grep -v "/var/tailstat/bin/tailstat.py" 2>/dev/null | crontab - >/dev/null 2>&1
-echo "Successfully disabled tailstat watchdog."

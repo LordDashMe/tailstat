@@ -4,7 +4,7 @@ import configparser
 config = configparser.ConfigParser()
 config.read("/etc/tailstat.conf")
 
-sys.path.append(config["DEFAULT"].get("ROOT_PATH") + "src/")
+sys.path.append(config["DEFAULT"].get("root_path") + "tailstat/")
 
 import tailstat_cpu
 

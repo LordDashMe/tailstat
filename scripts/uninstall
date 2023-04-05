@@ -1,0 +1,20 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(dirname "$(realpath "$0")")";
+
+# To make sure there are no workers or processes for 
+# the API left behind before the removal of the dependencies and configuration
+$SCRIPT_DIR/down
+
+# Remove tailstat python dependencies
+pip uninstall -y -r "$SCRIPT_DIR/../requirements.txt"
+
+# Remove tailstat nginx config
+rm /etc/tailstat.conf
+rm /etc/nginx/sites-available/tailstat_api
+rm /etc/nginx/sites-available/tailstat_dashboard
+rm /etc/nginx/sites-enabled/tailstat_api
+rm /etc/nginx/sites-enabled/tailstat_dashboard
+service nginx restart
+
+echo -e "\nTailstat uninstalled.\n"
