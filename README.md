@@ -46,23 +46,23 @@ You can install it on a server or local machine that matches the supported Linux
 
   - Download the tailstat:
 
-  ```sh
-  $ cd /var/
-  $ wget https://github.com/LordDashMe/tailstat/archive/refs/tags/x.x.x.zip -O tailstat.zip
-  $ unzip tailstat.zip
-  ```
+    ```sh
+    $ cd /var/
+    $ wget https://github.com/LordDashMe/tailstat/archive/refs/tags/x.x.x.zip -O tailstat.zip
+    $ unzip tailstat.zip
+    ```
 
   - Install the tailstat:
 
-  ```sh
-  $ /var/tailstat/scripts/install
-  ```
+    ```sh
+    $ /var/tailstat/scripts/install
+    ```
 
   - Up the tailstat API service:
 
-  ```sh
-  $ /var/tailstat/scripts/up
-  ```
+    ```sh
+    $ /var/tailstat/scripts/up
+    ```
 
   - Now you can use TailStat!
 
@@ -74,7 +74,7 @@ You can install it on a server or local machine that matches the supported Linux
 
 To contribute, please check the following steps on different environments in order to get started.
 
-### With Docker Environment
+### With Docker Environment (Recommended)
 
 - If you are familiar with Docker you can start immediately by running the docker compose command in the root directory.
 
