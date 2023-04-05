@@ -84,7 +84,7 @@ To contribute, please check the following steps on different environments in ord
 
 #### Work with the API
 
-- Navigate to the docker container name `tailstat`.
+- Navigate inside the docker container name `tailstat`.
 
 - Execute the TailStat installer script.
 
@@ -97,6 +97,20 @@ To contribute, please check the following steps on different environments in ord
   ```sh
   $ /var/tailstat/scripts/install_dev
   ```
+
+- Enable development mode on `/etc/tailstat.conf`
+
+  ```
+  development = 1
+  ```
+
+- Up the API service
+
+  ```
+  $ /var/tailstat/scripts/up
+  ```
+
+- Access it via `http://127.0.0.0:10000` or `http://localhost:10000` 
 
 #### Work with the Dashboard
 
@@ -118,6 +132,8 @@ To contribute, please check the following steps on different environments in ord
   ```
 
 - You can check more commands in `package.json`
+
+- Access it via `http://127.0.0.0:10001/` or `http://localhost:10001/` 
 
 ### With Other Environment
 

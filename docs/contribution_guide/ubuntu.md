@@ -32,6 +32,8 @@
   $ /var/tailstat/scripts/up
   ```
 
+- Access it via `http://127.0.0.0:10000` or `http://localhost:10000` 
+
 ## Work with the Dashboard
 
 - Node version required is `18.x.x`
@@ -52,3 +54,5 @@
   ```
 
 - You can check more commands in `package.json`
+
+- Access it via `http://127.0.0.0:10001/` or `http://localhost:10001/` 
