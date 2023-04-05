@@ -48,7 +48,7 @@ You can install it on a server or local machine that matches the supported Linux
 
     ```sh
     $ cd /var/
-    $ wget https://github.com/LordDashMe/tailstat/archive/refs/tags/x.x.x.zip -O tailstat.zip
+    $ wget https://github.com/LordDashMe/tailstat/archive/refs/heads/main.zip -O tailstat.zip
     $ unzip tailstat.zip
     ```
 
