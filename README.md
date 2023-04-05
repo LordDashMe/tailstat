@@ -42,9 +42,9 @@ You can install it on a server or local machine that matches the supported Linux
 
 ## Install & Usage
 
-- There are a few steps needed in order to start using Tailstat.
+- There are a few steps needed in order to start using TailStat.
 
-  - Download the tailstat:
+  - Download the TailStat:
 
     ```sh
     $ cd /var/
@@ -52,13 +52,13 @@ You can install it on a server or local machine that matches the supported Linux
     $ unzip tailstat.zip
     ```
 
-  - Install the tailstat:
+  - Install the TailStat:
 
     ```sh
     $ /var/tailstat/scripts/install
     ```
 
-  - Up the tailstat API service:
+  - Up the TailStat API service:
 
     ```sh
     $ /var/tailstat/scripts/up
@@ -86,13 +86,13 @@ To contribute, please check the following steps on different environments in ord
 
 - Navigate to the docker container name `tailstat`.
 
-- Execute the tailstat installer script.
+- Execute the TailStat installer script.
 
   ```sh
   $ /var/tailstat/scripts/install
   ```
 
-- Execute the tailstat installer dev script.
+- Execute the TailStat installer dev script.
 
   ```sh
   $ /var/tailstat/scripts/install_dev

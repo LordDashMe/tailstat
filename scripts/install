@@ -2,10 +2,10 @@
 
 SCRIPT_DIR="$(dirname "$(realpath "$0")")";
 
-# Setup tailstat python dependencies
+# Setup TailStat python dependencies
 pip install -r "$SCRIPT_DIR/../requirements.txt"
 
-# Setup tailstat nginx config
+# Setup TailStat nginx config
 cp "$SCRIPT_DIR/../etc/tailstat.conf" /etc/
 cp "$SCRIPT_DIR/../etc/nginx/sites-available/tailstat_api" /etc/nginx/sites-available/
 cp "$SCRIPT_DIR/../etc/nginx/sites-available/tailstat_dashboard" /etc/nginx/sites-available/
@@ -22,4 +22,4 @@ fi
 nginx -t
 service nginx restart
 
-echo -e "\nTailstat successfully installed!\n"
+echo -e "\nTailStat successfully installed!\n"
