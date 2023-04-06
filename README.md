@@ -86,6 +86,10 @@ To contribute, please check the following steps on different environments in ord
 
 - Navigate inside the docker container name `tailstat`.
 
+  ```sh
+  $ docker exec -it tailstat bash
+  ```
+
 - Execute the TailStat installer script.
 
   ```sh
@@ -115,6 +119,10 @@ To contribute, please check the following steps on different environments in ord
 #### Work with the Dashboard
 
 - Navigate inside the docker container name `tailstat_dashboard_res`.
+
+  ```sh
+  $ docker exec -it tailstat_dashboard_res sh
+  ```
 
 - Install the essential packges for node alphine `apk add g++ make py3-pip` before running the npm install.
 
