@@ -30,8 +30,6 @@ You can install it on a server or local machine that matches the supported Linux
 
   - Other coming soon!
 
-- Below are the specific requirements for each Supported Linux distribution:
-
 ### Debian
 
 - For debian, make sure to install or have the following packages:
