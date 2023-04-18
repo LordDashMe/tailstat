@@ -124,10 +124,10 @@ To contribute, please check the following steps on different environments in ord
 
 - Install the essential packges for node alphine `apk add g++ make py3-pip` before running the npm install.
 
-- Go to the dasboard folder resource and execute npm install.
+- Go to the dashboard folder resource and execute npm install.
 
   ```sh
-  $ cd /var/tailstat/dasboard/res
+  $ cd /var/tailstat/dashboard/res
   $ npm install
   ```
 
@@ -140,6 +140,17 @@ To contribute, please check the following steps on different environments in ord
 - You can check more commands in `package.json`
 
 - Access it via <http://127.0.0.0:10001/> or <http://localhost:10001/>
+
+#### Known Issues
+
+- For Windows, when you execute TailStat bash scripts you will encounter an error `"/bin/bash^M: bad interpreter: No such file or directory"`. To avoid this, execute the following command in Git Bash.
+
+  ```sh
+  $ git config core.eol lf
+  $ git config core.autocrlf false
+  $ git rm -rf --cached .
+  $ git reset --hard HEAD
+  ```
 
 ### With Other Environment
 
