@@ -143,14 +143,7 @@ To contribute, please check the following steps on different environments in ord
 
 #### Known Issues
 
-- For Windows, when you execute TailStat bash scripts you will encounter an error `"/bin/bash^M: bad interpreter: No such file or directory"`. To avoid this, execute the following command in Git Bash.
-
-  ```sh
-  $ git config core.eol lf
-  $ git config core.autocrlf false
-  $ git rm -rf --cached .
-  $ git reset --hard HEAD
-  ```
+- [Windows](https://github.com/LordDashMe/tailstat/blob/main/docs/contribution_guide/known_issues/windows.md)
 
 ### With Other Environment
 
