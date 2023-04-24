@@ -124,10 +124,10 @@ To contribute, please check the following steps on different environments in ord
 
 - Install the essential packges for node alphine `apk add g++ make py3-pip` before running the npm install.
 
-- Go to the dasboard folder resource and execute npm install.
+- Go to the dashboard folder resource and execute npm install.
 
   ```sh
-  $ cd /var/tailstat/dasboard/res
+  $ cd /var/tailstat/dashboard/res
   $ npm install
   ```
 
@@ -140,6 +140,10 @@ To contribute, please check the following steps on different environments in ord
 - You can check more commands in `package.json`
 
 - Access it via <http://127.0.0.0:10001/> or <http://localhost:10001/>
+
+#### Known Issues
+
+- [Windows](https://github.com/LordDashMe/tailstat/blob/main/docs/contribution_guide/known_issues/windows.md)
 
 ### With Other Environment
 
